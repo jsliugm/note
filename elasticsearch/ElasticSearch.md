@@ -1,6 +1,29 @@
 # ElasticSearch
 
+[TOC]
+
+## 问题思考
+
+倒排索引如何找到实际存放的位置？
+
+
+
 ## 安装
+
+### 容器方式安装
+
+https://hub.docker.com/_/elasticsearch
+
+```shell
+docker network create somenetwork
+docker pull elasticsearch:7.8.0
+
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+```
+
+
+
+### 本地安装
 
 官网下载直接启动，浏览器访问端口9200。
 
@@ -27,6 +50,7 @@
 4. 重启es
 
 
+
 ## 
 
 ## 对比传统数据库
@@ -34,6 +58,8 @@
 ![img](E:\softdev\github\note\elasticsearch\es004.png)
 
 ## Restful
+
+https://www.elastic.co/guide/en/elasticsearch/reference/7.6/docs.html
 
 ### 创建索引
 
@@ -67,3 +93,26 @@ PUT /索引名/类型名/文档id
 
 ### 更新数据
 
+
+
+### 默认类型
+
+![image-20220506153154398](E:\softdev\github\note\elasticsearch\es009.png)
+
+扩展：GET _cat/indices
+
+### 修改文档
+
+方法一：修改所有字段
+
+![image-20220506153544194](E:\softdev\github\note\elasticsearch\es010.png)
+
+方法二：只修改指定字段
+
+![image-20220506162825329](E:\softdev\github\note\elasticsearch\es012.png)
+
+
+
+### 获取get
+
+![image-20220506162511553](E:\softdev\github\note\elasticsearch\es011.png)

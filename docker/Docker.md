@@ -1,5 +1,11 @@
 # Docker
 
+## Docker安装
+
+https://www.runoob.com/docker/centos-docker-install.html
+
+
+
 ## Docker的常用命令
 
 ### 可视化
@@ -9,6 +15,35 @@
 ```shell
 docker run -d -p 8088:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer --privileged=true portainer/portainer
 ```
+
+## 安装redis
+
+下载镜像
+
+```shell
+docker pull redis:6.0.8
+```
+
+下载配置文件
+
+https://redis.io/docs/management/config/
+
+修改配置文件&启动容器
+
+```shell
+#修改配置
+vim /app/redis/redis.conf
+#创建目录
+mkdir -p /app/redis/data
+#启动容器
+docker run -p 6379:6379 --name myredis --privileged=true -v /app/redis/redis.conf:/etc/redis/redis.conf  -v /app/redis/data:/data -d redis:6.0.8 redis-server /etc/redis/redis.conf
+#进入容器
+docker exec -it contanerid bash
+#客户端链接redis
+redis-cli -a 123
+```
+
+
 
 ## DockerFile
 
