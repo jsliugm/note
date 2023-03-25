@@ -30,4 +30,4 @@ https://www.cnblogs.com/hollischuang/p/14260801.html
 
 ## 运行时数据区域
 
-![image-20220605103611231](E:\softdev\github\note\jvm\image-20220605103611231.png)
+![image-20220605103611231](image/image-20220605103611231.png)
