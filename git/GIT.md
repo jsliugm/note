@@ -69,3 +69,9 @@ GPT答案：
 
 
 
+## 全局代理设置
+
+```shell
+git config --global http.proxy socks5://127.0.0.1:7890
+```
+
