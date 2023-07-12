@@ -71,4 +71,4 @@ GPT答案：
 
 代理设置
 
-git config --global proxy.https 'socks5://127.0.0.1:7890'
+git config --global http.proxy socks5://127.0.0.1:7890
